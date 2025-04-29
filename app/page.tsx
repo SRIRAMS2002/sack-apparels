@@ -15,8 +15,6 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar"
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react"
-import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 
 export default function NavbarDemo() {
