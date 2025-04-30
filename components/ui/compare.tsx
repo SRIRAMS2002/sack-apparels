@@ -163,6 +163,18 @@ export const Compare = ({
         onTouchEnd={handleTouchEnd}
         onTouchMove={handleTouchMove}
       >
+         {!isDragging && !isMouseOver && (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      className="absolute z-40 top-4 left-1/2 -translate-x-1/2 text-white bg-black/50 px-3 py-1 rounded-full text-md backdrop-blur-sm"
+    >
+      Drag left to right
+    </motion.div>
+  )}
+
         {/* Handlebar */}
         <motion.div
           className="h-full w-px absolute top-0 z-30 bg-gradient-to-b from-transparent from-[5%] to-[95%] via-indigo-500 to-transparent"

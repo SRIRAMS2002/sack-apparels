@@ -33,44 +33,29 @@ export default function NavbarDemo() {
     },
   ]
 
-  const faqs = [
-    {
-      id: 1,
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      id: 2,
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      id: 3,
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    // More questions...
-  ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   return (
-    <div className="relative w-full  bg-gradient-to-tr from-[#edede9] from-10% via-[#c2b191] via-30%  to-[#f5ebe0] to-90%">
+    <div id="features" className="relative w-full   bg-gradient-to-tr from-[#edede9] from-10% via-[#c2b191] via-30%  to-[#f5ebe0] to-90%">
       <Navbar>
-        {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+          <a
+  href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center hover:bg-green-700"
+>
+  Contact Us
+</a>
+
           </div>
         </NavBody>
 
-        {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
@@ -79,43 +64,46 @@ export default function NavbarDemo() {
 
           <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
             {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
+              <a key={idx} href={item.link} onClick={() => setIsMobileMenuOpen(false)} className="text-neutral-600">
+                {item.name}
               </a>
             ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton onClick={() => setIsMobileMenuOpen(false)} variant="primary" className="w-full">
-                Login
-              </NavbarButton>
-              <NavbarButton onClick={() => setIsMobileMenuOpen(false)} variant="primary" className="w-full">
-                Book a call
-              </NavbarButton>
-            </div>
+            <div className="flex flex-col gap-4">
+            <a
+  href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center hover:bg-green-700"
+>
+  Contact Us
+</a>
+           </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
 
 
-      <h1 className="mb-4 text-center text-3xl font-bold pt-12">Your Design. Your T-Shirt. Your Style.</h1>
+      <h1  className="mb-4 text-center text-3xl font-bold pt-12">Your Design. Your T-Shirt. Your Style.</h1>
       <p className="mb-5 text-center text-md max-w-xl mx-auto text-zinc-500">
       Bring your ideas to life with high-quality custom T-shirt printing. Whether it’s for your brand, team, or just for fun — design it your way and wear it with pride.
       </p>
 
-      <div className="p-4">
+      <div  className="p-4">
         
-        <Compare/>
+        <Compare className="features"/>
       </div>
 
       <h1 className="mb-4 text-center text-3xl font-bold pt-12">Products</h1>
       <p className="mb-5 text-center text-md max-w-xl mx-auto text-zinc-500">
       Bring your ideas to life with high-quality custom T-shirt printing. Whether it’s for your brand, team, or just for fun — design it your way and wear it with pride.
       </p>
-      <ProductSection/>
+
+
+      <div id="Shop">
+      <ProductSection />
+
+      </div>
 
       <Banners/>
 
@@ -133,12 +121,19 @@ export default function NavbarDemo() {
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-4 lg:px-8">
           <div className="border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
             <div className="flex space-x-6 md:order-2">
-              {footerNavigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon aria-hidden="true" className="h-6 w-6" />
-                </a>
-              ))}
+            {footerNavigation.social.map((item) => (
+  <a
+    key={item.name}
+    href={item.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-500 hover:text-gray-400"
+  >
+    <span className="sr-only">{item.name}</span>
+    <item.icon aria-hidden="true" className="h-6 w-6" />
+  </a>
+))}
+
             </div>
             <p className="mt-8 text-sm leading-5 text-gray-400 md:order-1 md:mt-0">
               &copy; 2025 Sack Apparels              , Inc. All rights reserved.
@@ -245,34 +240,11 @@ const DummyContent = () => {
 type IconProps = React.SVGProps<SVGSVGElement>;
 
 const footerNavigation = {
-  solutions: [
-    { name: 'Hosting', href: '#' },
-    { name: 'Data Services', href: '#' },
-    { name: 'Uptime Monitoring', href: '#' },
-    { name: 'Enterprise Services', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Reference', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
+
   social: [
     {
       name: 'Facebook',
-      href: '#',
+      href: 'https://www.facebook.com/profile.php?id=61558257801758&mibextid=dGKdO6',
       icon: (props: IconProps) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -285,7 +257,7 @@ const footerNavigation = {
     },
     {
       name: 'Instagram',
-      href: '#',
+      href: 'https://www.instagram.com/sack_apparels2.0/',
       icon: (props: IconProps) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -296,18 +268,10 @@ const footerNavigation = {
         </svg>
       ),
     },
-    {
-      name: 'X',
-      href: '#',
-      icon: (props: IconProps) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
-        </svg>
-      ),
-    },
+    
     {
       name: 'WhatsApp',
-      href: '#',
+      href: 'https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0',
       icon: (props: IconProps) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -316,18 +280,6 @@ const footerNavigation = {
         </svg>
       ),
     },    
-    {
-      name: 'YouTube',
-      href: '#',
-      icon: (props: IconProps) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
+    
   ],
 }
