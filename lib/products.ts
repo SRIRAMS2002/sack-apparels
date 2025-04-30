@@ -45,7 +45,7 @@ export const products = [
     {
         id: 3,
         name: 'Zip Tote Basket',
-        price: '$140',
+        price: '$10',
         color: 'White and black',
         description: 'A stylish zip tote bag in black and white.',
         imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
@@ -66,7 +66,7 @@ export const products = [
       {
         id: 4,
         name: 'Basic Tee 6-Pack',
-        price: '$192',
+        price: '$19',
         color: 'Multicolor',
         description: 'A pack of 6 basic tees in grayscale colors.',
         imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-02.jpg',
@@ -87,7 +87,7 @@ export const products = [
       {
         id: 5,
         name: 'Zip Tote Basket',
-        price: '$140',
+        price: '$40',
         color: 'White and black',
         description: 'A stylish zip tote bag in black and white.',
         imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
@@ -108,7 +108,7 @@ export const products = [
       {
         id: 6,
         name: 'Basic Tee 6-Pack',
-        price: '$192',
+        price: '$92',
         color: 'Multicolor',
         description: 'A pack of 6 basic tees in grayscale colors.',
         imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-02.jpg',

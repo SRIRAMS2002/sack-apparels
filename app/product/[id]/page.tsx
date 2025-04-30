@@ -242,13 +242,28 @@ type Props = {
             </RadioGroup>
           </fieldset>
         </div>
-
+{/* 
         <button
           type="submit"
           className="mt-10 w-full rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
         >
           Add to bag
-        </button>
+        </button> */}
+
+<button
+  type="submit"
+  className="mt-10 w-full rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
+>
+  Add to bag
+</button>
+<a
+  href={`https://wa.me/918056305724?text=${encodeURIComponent(
+    `Hello, I'm interested in the product: ${product.name}\nColor: ${selectedColor.name}\nSize: ${selectedSize.name}`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 w-full inline-block text-center rounded-md border border-green-600 bg-green-600 px-8 py-3 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+></a>
       </div>
 
       {/* IMAGE SECTION — ORDERED AFTER FORM ON MOBILE, LEFT ON DESKTOP */}
