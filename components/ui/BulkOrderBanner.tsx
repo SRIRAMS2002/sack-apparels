@@ -21,7 +21,7 @@ export default function BulkOrderBanner() {
     //     />
     //   </div>
     // </div>
-    <div className="mx-auto mt-12 max-w-7xl sm:mt-12 sm:px-6 lg:px-8">
+    <div id="Contact" className="mx-auto mt-12 max-w-7xl sm:mt-12 sm:px-6 lg:px-8">
       <div className="relative overflow-hidden  bg-gray-900 px-6 py-10 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
         <img
           alt=""
@@ -66,7 +66,9 @@ export default function BulkOrderBanner() {
       </h2>
       <p className="mt-2 text-lg text-white">Min. Order Quantity 10pcs</p>
       <button className="mt-6 px-5 py-2 bg-white bg-opacity-30 rounded-full text-black text-sm hover:bg-opacity-50 transition">
-        CLICK HERE
+       
+        <a href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"  target="_blank"
+              rel="noopener noreferrer"> CLICK HERE</a>
       </button>
     </div>
   </div>

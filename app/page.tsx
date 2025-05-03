@@ -3,6 +3,7 @@ import AccordionSection from "@/components/ui/AccordionItem"
 import Banners from "@/components/ui/banners"
 import BulkOrderBanner from "@/components/ui/BulkOrderBanner"
 import { Compare } from "@/components/ui/compare"
+import Header from "@/components/ui/header"
 import ProductSection from "@/components/ui/ProductSection"
 import {
   Navbar,
@@ -24,36 +25,36 @@ export default function NavbarDemo() {
       link: "#features",
     },
     {
-      name: "Shop",
+      name: "Products",
       link: "#Shop",
     },
-    {
-      name: "Contact Us",
-      link: "#contact",
-    },
+    
+
   ]
 
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
   return (
     <div id="features" className="relative w-full   bg-gradient-to-tr from-[#edede9] from-10% via-[#c2b191] via-30%  to-[#f5ebe0] to-90%">
       <Navbar>
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-          <a
-  href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={() => setIsMobileMenuOpen(false)}
-  className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center hover:bg-green-700"
->
-  Contact Us
-</a>
 
-          </div>
+       
+            
+            <div className="flex flex-col gap-4 z-10">
+              <a
+                href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="bg-gradient-to-b from-[#ad314e] to-[#410214] rounded-md text-white shadow-xs  px-3 py-2 "
+              >
+                Contact Us
+              </a>
+            </div>
+          
         </NavBody>
 
         <MobileNav>
@@ -69,51 +70,53 @@ export default function NavbarDemo() {
               </a>
             ))}
             <div className="flex flex-col gap-4">
-            <a
-  href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={() => setIsMobileMenuOpen(false)}
-  className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center hover:bg-green-700"
->
-  Contact Us
-</a>
-           </div>
+              <a
+                href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center "
+              >
+                Contact Us
+              </a>
+            </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-
-
-      <h1  className="mb-4 text-center text-3xl font-bold pt-12">Your Design. Your T-Shirt. Your Style.</h1>
-      <p className="mb-5 text-center text-md max-w-xl mx-auto text-zinc-500">
-      Bring your ideas to life with high-quality custom T-shirt printing. Whether it’s for your brand, team, or just for fun — design it your way and wear it with pride.
-      </p>
-
-      <div  className="p-4">
-        
-        <Compare className="features"/>
+      <div className="  mt-5 relative w-full bg-gradient-to-b from-[#ad314e] to-[#410214]">
+        <Header />
       </div>
 
-      <h1 className="mb-4 text-center text-3xl font-bold pt-12">Products</h1>
+      <h1 className="mb-4 text-center text-3xl font-bold pt-12">Your Design. Your T-Shirt. Your Style.</h1>
       <p className="mb-5 text-center text-md max-w-xl mx-auto text-zinc-500">
-      Bring your ideas to life with high-quality custom T-shirt printing. Whether it’s for your brand, team, or just for fun — design it your way and wear it with pride.
+        Bring your ideas to life with high-quality custom T-shirt printing. Whether it’s for your brand, team, or just for fun — design it your way and wear it with pride.
+      </p>
+
+      <div className="p-4">
+
+        <Compare className="features" />
+      </div>
+
+      <h1 id="Shop" className="mb-4 text-center text-3xl font-bold pt-12">Products</h1>
+      <p className="mb-5 text-center text-md max-w-xl mx-auto text-zinc-500">
+        Bring your ideas to life with high-quality custom T-shirt printing. Whether it’s for your brand, team, or just for fun — design it your way and wear it with pride.
       </p>
 
 
-      <div id="Shop">
-      <ProductSection />
+      <div >
+        <ProductSection />
 
       </div>
 
-      <Banners/>
+      <Banners />
 
-      <BulkOrderBanner/>
+      <BulkOrderBanner />
       {/* FAQ section */}
       <AccordionSection />
 
 
 
-{/* Footer */}
+      {/* Footer */}
       <footer aria-labelledby="footer-heading" className="relative bg-white/55 mt-5">
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -121,18 +124,18 @@ export default function NavbarDemo() {
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-4 lg:px-8">
           <div className="border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
             <div className="flex space-x-6 md:order-2">
-            {footerNavigation.social.map((item) => (
-  <a
-    key={item.name}
-    href={item.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-500 hover:text-gray-400"
-  >
-    <span className="sr-only">{item.name}</span>
-    <item.icon aria-hidden="true" className="h-6 w-6" />
-  </a>
-))}
+              {footerNavigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-gray-400"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon aria-hidden="true" className="h-6 w-6" />
+                </a>
+              ))}
 
             </div>
             <p className="mt-8 text-sm leading-5 text-gray-400 md:order-1 md:mt-0">
@@ -268,7 +271,7 @@ const footerNavigation = {
         </svg>
       ),
     },
-    
+
     {
       name: 'WhatsApp',
       href: 'https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0',
@@ -279,7 +282,7 @@ const footerNavigation = {
           />
         </svg>
       ),
-    },    
-    
+    },
+
   ],
 }

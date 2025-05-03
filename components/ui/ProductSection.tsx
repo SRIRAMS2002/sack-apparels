@@ -5,7 +5,7 @@ import { products } from '@/lib/products';
 export default function ProductSection() {
   return (
     <div id="shop" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900">Products</h2>
+      {/* <h2 className="text-2xl font-bold tracking-tight text-gray-900">Products</h2> */}
       <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
         {products.map((product) => (
           <div key={product.id}>

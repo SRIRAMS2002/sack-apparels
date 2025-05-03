@@ -88,9 +88,16 @@ export default function ProductDetail() {
 
 
   const navItems = [
-    { name: "Home", link: "/" },
-    { name: "Shop", link: "/#Shop" },
-    { name: "Contact", link: "/contact" },
+    {
+      name: "Features",
+      link: "#features",
+    },
+    {
+      name: "Products",
+      link: "#Shop",
+    },
+    
+
   ]
 
   return (
@@ -100,18 +107,21 @@ export default function ProductDetail() {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-          <a
-  href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={() => setIsMobileMenuOpen(false)}
-  className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center hover:bg-green-700"
->
-  Contact Us
-</a>
 
-          </div>
+       
+            
+            <div className="flex flex-col gap-4 z-10">
+              <a
+                href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="bg-gradient-to-b from-[#ad314e] to-[#410214] rounded-md text-white shadow-xs  px-3 py-2 "
+              >
+                Contact Us
+              </a>
+            </div>
+          
         </NavBody>
 
         <MobileNav>
@@ -127,16 +137,16 @@ export default function ProductDetail() {
               </a>
             ))}
             <div className="flex flex-col gap-4">
-            <a
-  href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={() => setIsMobileMenuOpen(false)}
-  className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center hover:bg-green-700"
->
-  Contact Us
-</a>
-           </div>
+              <a
+                href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full rounded-md bg-white px-4 py-2 text-black text-sm font-bold text-center "
+              >
+                Contact Us
+              </a>
+            </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
