@@ -21,6 +21,7 @@ import { products } from '@/lib/products';
 import { use } from 'react';
 import { Radio, RadioGroup } from '@headlessui/react';
 import SizeGuideModal from '@/components/ui/SizeGuideModal';
+import { fieldset } from 'framer-motion/client';
 
 type Props = {
   params: { id: string };
