@@ -10,7 +10,7 @@ export default function ProductSection() {
         {products.map((product) => (
           <div key={product.id}>
             <Link href={`/product/${product.id}`}>
-              <div className="group relative">
+              <div className="group relative bg-white/90 px-3 py-5 rounded-xl">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
@@ -18,10 +18,10 @@ export default function ProductSection() {
                 />
                 <div className="mt-4 flex justify-between">
                   <div>
-                    <h3 className="text-sm text-gray-700">{product.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-700">{product.name}</h3>
                     <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                   </div>
-                  <p className="text-sm font-medium text-gray-900">{product.price}</p>
+                  <p className="text-xl font-medium text-gray-900">{product.price}</p>
                 </div>
               </div>
             </Link>

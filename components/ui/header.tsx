@@ -7,11 +7,11 @@ export default function Header() {
      
 
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col-reverse lg:flex-row items-center px-6 lg:px-20 py-8 gap-8 ">        {/* Text */}
+      <main className="flex-1 flex flex-col-reverse lg:flex-row items-center px-6 lg:px-20 py-8 gap-8 ">        
          {/* Left: Content */}
     <div className="flex-1 space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-        Wear Your Style <br /> With Sack Apparels!
+        Wear Your Style <br /> With  <span className='text-[#c8650f]'>Sack Apparels!</span>
       </h1>
       <p className="text-lg md:text-xl font-semibold">
         Trendy. Comfortable. Unique.
@@ -20,12 +20,11 @@ export default function Header() {
         Get The Coolest T-Shirts Delivered To Your Doorstep!<br />
         Order Now On WhatsApp – Tap The Button & Grab Your Favorite Designs!
       </p>
-      <button className="mt-4 bg-white text-black font-semibold py-2 px-6 rounded-full">
+      <button className="mt-4 bg-white text-black font-semibold py-2 px-6 rounded-full min-w-sm">
         View Collection
       </button>
     </div>
 
-        {/* Image */}
         <div className="flex-1 flex justify-center items-center">
   <img
     src="https://img.freepik.com/free-photo/portrait-smiling-beautiful-girl-her-handsome-boyfriend-laughing_158538-4877.jpg?t=st=1746280487~exp=1746284087~hmac=64e86b0251b4376be4774d1abe482a17be722c7e8a388083a68a3f0d9a9668b5&w=826"

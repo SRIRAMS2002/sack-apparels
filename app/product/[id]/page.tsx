@@ -20,6 +20,7 @@ import { notFound } from 'next/navigation';
 import { products } from '@/lib/products';
 import { use } from 'react';
 import { Radio, RadioGroup } from '@headlessui/react';
+import SizeGuideModal from '@/components/ui/SizeGuideModal';
 
 type Props = {
   params: { id: string };
@@ -99,7 +100,7 @@ export default function ProductDetail() {
     
 
   ]
-
+  const [isModalOpen, setModalOpen] = useState(false)
   return (
     <div className="relative w-full bg-gradient-to-tr from-[#edede9] via-[#c2b191] to-[#f5ebe0]">
       {/* Navbar */}
@@ -183,7 +184,7 @@ export default function ProductDetail() {
                         />
                       </Radio>
                     ))}
-                  </RadioGroup>
+                  </RadioGroup>color
                 </fieldset>
               </div>
 
@@ -191,8 +192,14 @@ export default function ProductDetail() {
               <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                  <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
-                </div>
+                  <button
+          onClick={() => setModalOpen(true)}
+          className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+        >
+          Size guide
+        </button>
+        <SizeGuideModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+                          </div>
                 <fieldset aria-label="Choose a size" className="mt-4">
                   <RadioGroup
                     value={selectedSize}
@@ -263,9 +270,9 @@ export default function ProductDetail() {
             {/* DETAILS SECTION — ALWAYS LAST */}
             <div className="order-3 lg:col-span-2">
               <h2 className="mt-6 text-lg font-semibold text-gray-900">Highlights</h2>
-              <ul className="mt-2 list-disc pl-5 text-sm text-gray-600">
+              <ul className="mt-2 list-disc pl-5 text-sm text-gray-800 space-x-1.5">
                 {product.highlights.map((item, i) => (
-                  <li key={i}>{item}</li>
+                  <li key={i} className='mt-1'>{item}</li>
                 ))}
               </ul>
 
