@@ -22,6 +22,7 @@ import { use } from 'react';
 import { Radio, RadioGroup } from '@headlessui/react';
 import SizeGuideModal from '@/components/ui/SizeGuideModal';
 import { fieldset } from 'framer-motion/client';
+import SizeGuideSection from '@/components/ui/SizeGuideModal';
 
 type Props = {
   params: { id: string };
@@ -92,11 +93,11 @@ export default function ProductDetail() {
   const navItems = [
     {
       name: "Features",
-      link: "#features",
+      link: "/#features",
     },
     {
       name: "Products",
-      link: "#Shop",
+      link: "/#Shop",
     },
     
 
@@ -163,44 +164,48 @@ export default function ProductDetail() {
               <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
               <p className="mt-2 text-xl text-gray-700">{product.price}</p>
               <p className="mt-4 text-gray-600">{product.description}</p>
+              <p className="text-xl font-medium text-gray-500">GSM - {product.gsm}</p>
 
               {/* Color Picker */}
               <div className="mt-8">
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
-                <fieldset aria-label="Choose a color" className="mt-4">
-                  <RadioGroup value={selectedColor} onChange={setSelectedColor} className="flex items-center gap-x-3">
-                    {product.colors.map((color) => (
-                      <Radio
-                        key={color.name}
-                        value={color}
-                        aria-label={color.name}
-                        className={classNames(
-                          color.selectedClass,
-                          'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-hidden data-checked:ring-2 data-focus:data-checked:ring-3 data-focus:data-checked:ring-offset-1',
-                        )}
-                      >
-                        <span
-                          aria-hidden="true"
-                          className={classNames(color.class, 'size-8 rounded-full border border-black/10')}
-                        />
-                      </Radio>
-                    ))}
-                  </RadioGroup>color
-                </fieldset>
-              </div>
+  <h3 className="text-sm font-medium text-gray-900">Color</h3>
+  <fieldset aria-label="Choose a color" className="mt-4">
+    <RadioGroup
+      value={selectedColor}
+      onChange={setSelectedColor}
+      className="flex flex-wrap gap-4 sm:gap-6"
+    >
+      {product.colors.map((color) => (
+        <Radio
+          key={color.name}
+          value={color}
+          aria-label={color.name}
+          className={classNames(
+            color.selectedClass,
+            'flex flex-col items-center space-y-1 p-2 rounded-md focus:outline-none data-checked:ring-2 data-focus:data-checked:ring-3 data-focus:data-checked:ring-offset-1'
+          )}
+        >
+          <span
+            aria-hidden="true"
+            className={classNames(
+              color.class,
+              'size-8 min-w-8 rounded-full border border-black/10'
+            )}
+          />
+          <span className="text-xs text-gray-700">{color.name}</span>
+        </Radio>
+      ))}
+    </RadioGroup>
+  </fieldset>
+</div>
+
 
               {/* Size Picker */}
               <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                  <button
-          onClick={() => setModalOpen(true)}
-          className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-        >
-          Size guide
-        </button>
-        <SizeGuideModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
-                          </div>
+       
+                                 </div>
                 <fieldset aria-label="Choose a size" className="mt-4">
                   <RadioGroup
                     value={selectedSize}
@@ -270,12 +275,14 @@ export default function ProductDetail() {
 
             {/* DETAILS SECTION — ALWAYS LAST */}
             <div className="order-3 lg:col-span-2">
+
               <h2 className="mt-6 text-lg font-semibold text-gray-900">Highlights</h2>
               <ul className="mt-2 list-disc pl-5 text-sm text-gray-800 space-x-1.5">
                 {product.highlights.map((item, i) => (
                   <li key={i} className='mt-1'>{item}</li>
                 ))}
               </ul>
+              <SizeGuideSection /> 
 
               <h2 className="mt-6 text-lg font-semibold text-gray-900">Details</h2>
               <p className="mt-2 text-sm text-gray-600">{product.details}</p>

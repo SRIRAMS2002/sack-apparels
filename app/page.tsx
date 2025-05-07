@@ -28,7 +28,7 @@ export default function NavbarDemo() {
       name: "Products",
       link: "#Shop",
     },
-    
+
 
   ]
 
@@ -41,20 +41,20 @@ export default function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
 
-       
-            
-            <div className="flex flex-col gap-4 z-10">
-              <a
-                href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-gradient-to-b from-[#ad314e] to-[#410214] rounded-md text-white shadow-xs  px-3 py-2 "
-              >
-                Contact Us
-              </a>
-            </div>
-          
+
+
+          <div className="flex flex-col gap-4 z-10">
+            <a
+              href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="bg-gradient-to-b from-[#ad314e] to-[#410214] rounded-md text-white shadow-xs  px-3 py-2 "
+            >
+              Contact Us
+            </a>
+          </div>
+
         </NavBody>
 
         <MobileNav>
@@ -87,6 +87,32 @@ export default function NavbarDemo() {
         <Header />
       </div>
 
+       {/* Logo cloud */}
+       <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
+  <h2 className="text-center text-lg font-semibold leading-8 text-black">
+    The world’s most innovative companies use our Services
+  </h2>
+  <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
+      ZOHO
+    </div>
+    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
+      PSG
+    </div>
+    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
+    MICE Globals
+    </div>
+    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
+      DB Events
+    </div>
+    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
+      NKS - Events
+    </div>
+  </div>
+</div>
+
+
+
       <h1 className="mb-4 text-center text-3xl font-bold pt-12">Your Design. Your T-Shirt. Your Style.</h1>
       <p className="mb-5 text-center text-md max-w-xl mx-auto text-zinc-500">
         Bring your ideas to life with high-quality custom T-shirt printing. Whether it’s for your brand, team, or just for fun — design it your way and wear it with pride.
@@ -107,6 +133,44 @@ export default function NavbarDemo() {
         <ProductSection />
 
       </div>
+
+      <div className="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
+        <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
+          <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
+            <div>
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+                We built our business on great customer service
+              </h2>
+              <p className="mt-4 text-gray-700">
+                At the beginning at least, but then we realized we could make a lot more money if we kinda stopped caring about that. Our new strategy is to write a bunch of things 
+                that look really good in the headlines, then clarify in the small print but hope people don't actually read it. We used to reply to every email, answer every call, and bend over backwards to keep our customers happy </p>
+                <p className="mt-4 text-gray-700">
+                But now, we’ve optimized the process. That means automated replies, endless FAQ loops, and “unexpectedly high volumes” of support requests every single day. It's not that we don't care — it's just that it's way more efficient (and profitable) to appear like we do. At the end of the day, good service costs money, and we figured you'd rather spend that on something shiny.</p>
+            </div>
+            <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
+              <img
+                alt=""
+                src="/customer.jpg"
+                className="object-cover object-center"
+              />
+            </div>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+            {incentives.map((incentive) => (
+              <div key={incentive.name} className="sm:flex lg:block">
+                <div className="sm:flex-shrink-0">
+                  <img alt="" src={incentive.imageSrc} className="h-32 w-32 rounded-md"  />
+                </div>
+                <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
+                  <h3 className="text-sm font-medium text-gray-900">{incentive.name}</h3>
+                  <p className="mt-2 text-sm text-gray-500">{incentive.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
 
       <Banners />
 
@@ -286,3 +350,21 @@ const footerNavigation = {
 
   ],
 }
+const incentives = [
+  {
+    name: 'Free shipping',
+    imageSrc: 'free-shipping.jpg',
+    description: "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
+  },
+  {
+    name: 'Customer support',
+    imageSrc: '/customer-support.webp',
+    description: "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+  },
+  {
+    name: 'Offers',
+    imageSrc: '/special-offer.jpg',
+    description:
+      "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+  },
+]

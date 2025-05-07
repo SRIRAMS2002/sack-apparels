@@ -135,5 +135,7 @@
     animation: marquee 20s linear infinite; }
 }
 
-
+.bg-rainbow {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
 

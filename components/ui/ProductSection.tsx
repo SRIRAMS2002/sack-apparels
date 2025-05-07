@@ -10,18 +10,23 @@ export default function ProductSection() {
         {products.map((product) => (
           <div key={product.id}>
             <Link href={`/product/${product.id}`}>
-              <div className="group relative bg-white/90 px-3 py-5 rounded-xl">
+              <div className="group relative bg-white/90  rounded-xl">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  className="aspect-square w-full rounded-md object-cover group-hover:opacity-75"
+                  className="aspect-square w-full object-cover group-hover:opacity-75"
                 />
-                <div className="mt-4 flex justify-between">
+                <div className="bg-black px-3 py-3 flex rounded-b-xl justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-700">{product.name}</h3>
-                    <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                    <h3 className="text-xl font-bold text-gray-100">{product.name}</h3>
+                    <p className="mt-1 text-sm text-gray-300">{product.color}</p>
+                    
                   </div>
-                  <p className="text-xl font-medium text-gray-900">{product.price}</p>
+                  <div>
+                  <p className="text-xl font-medium text-gray-100">{product.price}</p> 
+                  </div>
+                 
+                  
                 </div>
               </div>
             </Link>
