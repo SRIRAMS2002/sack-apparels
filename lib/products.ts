@@ -6,21 +6,26 @@ export const products = [
     price: '₹449',
     color: 'Multi - Color',
     gsm: "180",
-
+    piece: [{ name: '10 piece', inStock: true },
+    { name: '20 piece', inStock: true },
+    { name: 'Custom piece', inStock: true },],
     description: 'A pack of Minimum 10 to Maximum basic Tshirts in Multi colors.',
     imageSrc: '/tshirt.png',
     imageAlt: 'T-shirts laid out flat',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -42,15 +47,21 @@ export const products = [
     imageAlt: 'T-shirts laid out flat',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -72,15 +83,21 @@ export const products = [
     imageAlt: 'Zip tote bag',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -103,15 +120,21 @@ export const products = [
     imageAlt: 'Zip tote bag',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -134,15 +157,21 @@ export const products = [
     imageAlt: 'Zip tote bag',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -161,19 +190,25 @@ export const products = [
     gsm: "250",
     color: 'Multi - Color',
     description: 'A pack of Minimum 10 to Maximum basic Tshirts in Multi colors.',
-    imageSrc: '/White-line-collor.png',
+    imageSrc: '/typping.jpg',
     imageAlt: 'Zip tote bag',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -200,15 +235,20 @@ export const products = [
       '✅ Crush Resistant & Color Fast',
       '✅ Temperature Neutralizing Design ',
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
     ],
-    
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -222,7 +262,7 @@ export const products = [
   {
     id: 8,
     name: 'Hoodie',
-    price: '$92',
+    price: '₹449',
     gsm: "200",
     color: 'Multi - Color',
     description: 'A pack of Minimum 10 to Maximum basic Tshirts in Multi colors.',
@@ -230,15 +270,21 @@ export const products = [
     imageAlt: 'T-shirts laid out flat',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },
@@ -252,7 +298,7 @@ export const products = [
   {
     id: 9,
     name: 'Sweat Shirts',
-    price: '$19',
+    price: '₹449',
     gsm: "200",
     color: 'Multi - Color',
     description: 'A pack of Minimum 10 to Maximum basic Tshirts in Multi colors.',
@@ -260,15 +306,21 @@ export const products = [
     imageAlt: 'T-shirts laid out flat',
     highlights: [
       '✅ Free Delivery ',
+      '✅ Free Customization',
       '✅ No Shipping Charges ',
       '✅ Within 24-hrs delivery ',
-      
+
     ],
+    piece: [{ name: '10 piece', inStock: true },
+      { name: '20 piece', inStock: true },
+      { name: 'Custom piece', inStock: true },],
     details: 'Engineered for performance, comfort, and durability, this tote adapts seamlessly to your lifestyle—whether you are at the office, on the field, or unwinding outdoors.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
       { name: 'Multi-colour', class: 'bg-rainbow', selectedClass: 'ring-gray-900' },
+      { name: 'Custom-colour', class: 'bg-red', selectedClass: 'ring-gray-900' },
+
     ],
     sizes: [
       { name: 'S', inStock: true },

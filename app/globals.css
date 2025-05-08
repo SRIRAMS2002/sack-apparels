@@ -139,3 +139,7 @@
   background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
 }
 
+.bg-red{
+  background-color: brown;
+}
+

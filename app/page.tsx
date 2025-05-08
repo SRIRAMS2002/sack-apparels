@@ -87,29 +87,6 @@ export default function NavbarDemo() {
         <Header />
       </div>
 
-       {/* Logo cloud */}
-       <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
-  <h2 className="text-center text-lg font-semibold leading-8 text-black">
-    The world’s most innovative companies use our Services
-  </h2>
-  <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
-      ZOHO
-    </div>
-    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
-      PSG
-    </div>
-    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
-    MICE Globals
-    </div>
-    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
-      DB Events
-    </div>
-    <div className="col-span-1 text-center text-5xl font-bold text-gray-800">
-      NKS - Events
-    </div>
-  </div>
-</div>
 
 
 
@@ -134,6 +111,31 @@ export default function NavbarDemo() {
 
       </div>
 
+
+       {/* Logo cloud */}
+       <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
+  <h2 className="text-center text-lg font-semibold leading-8 text-black">
+    The world’s most innovative companies use our Services
+  </h2>
+  <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 gap-x-6 gap-y-8 sm:max-w-xl sm:grid-cols-3 sm:gap-x-8 lg:max-w-none lg:grid-cols-5 lg:gap-x-10">
+  <div className="col-span-1 flex justify-center">
+    <img src="/zoho.png" alt="Zoho" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+  </div>
+  <div className="col-span-1 flex justify-center">
+    <img src="/psg.png" alt="PSG" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+  </div>
+  <div className="col-span-1 flex justify-center">
+    <img src="/nks.png" alt="NKS" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+  </div>
+  <div className="col-span-1 flex justify-center">
+    <img src="/MICE.png" alt="MICE" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+  </div>
+  <div className="col-span-1 flex justify-center">
+    <img src="/MCU.png" alt="MCU" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+  </div>
+</div>
+</div>
+
       <div className="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
           <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
@@ -156,18 +158,19 @@ export default function NavbarDemo() {
             </div>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-            {incentives.map((incentive) => (
-              <div key={incentive.name} className="sm:flex lg:block">
-                <div className="sm:flex-shrink-0">
-                  <img alt="" src={incentive.imageSrc} className="h-32 w-32 rounded-md"  />
-                </div>
-                <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-                  <h3 className="text-sm font-medium text-gray-900">{incentive.name}</h3>
-                  <p className="mt-2 text-sm text-gray-500">{incentive.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+  {incentives.map((incentive) => (
+    <div key={incentive.name} className="flex flex-col items-center sm:flex-row lg:flex-col lg:items-start">
+      <div className="flex justify-center sm:flex-shrink-0">
+        <img alt="" src={incentive.imageSrc} className="h-32 w-32 rounded-md" />
+      </div>
+      <div className="mt-4 text-center sm:ml-6 sm:mt-0 sm:text-left lg:ml-0 lg:mt-6 lg:text-left">
+        <h3 className="text-lg font-bold text-gray-900">{incentive.name}</h3>
+        <p className="mt-2 text-md text-gray-700">{incentive.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
 

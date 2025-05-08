@@ -42,6 +42,7 @@ type Product = {
   images: { src: string; alt: string }[];
   colors: { name: string; class: string; selectedClass: string }[];
   sizes: { name: string; inStock: boolean }[];
+  piece: { name: string; inStock: boolean }[];
   description: string;
   highlights: string[];
   details: string;
@@ -87,6 +88,8 @@ export default function ProductDetail() {
 
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+  const [selectedPiece, setSelectedPiece] = useState(product.piece[0]);
+
 
 
 
@@ -99,7 +102,7 @@ export default function ProductDetail() {
       name: "Products",
       link: "/#Shop",
     },
-    
+
 
   ]
   const [isModalOpen, setModalOpen] = useState(false)
@@ -111,20 +114,20 @@ export default function ProductDetail() {
           <NavbarLogo />
           <NavItems items={navItems} />
 
-       
-            
-            <div className="flex flex-col gap-4 z-10">
-              <a
-                href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-gradient-to-b from-[#ad314e] to-[#410214] rounded-md text-white shadow-xs  px-3 py-2 "
-              >
-                Contact Us
-              </a>
-            </div>
-          
+
+
+          <div className="flex flex-col gap-4 z-10">
+            <a
+              href="https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="bg-gradient-to-b from-[#ad314e] to-[#410214] rounded-md text-white shadow-xs  px-3 py-2 "
+            >
+              Contact Us
+            </a>
+          </div>
+
         </NavBody>
 
         <MobileNav>
@@ -161,51 +164,106 @@ export default function ProductDetail() {
 
             {/* FORM SECTION — LEFT ON DESKTOP, TOP ON MOBILE */}
             <div className="order-1 lg:order-none">
-              <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
-              <p className="mt-2 text-xl text-gray-700">{product.price}</p>
-              <p className="mt-4 text-gray-600">{product.description}</p>
-              <p className="text-xl font-medium text-gray-500">GSM - {product.gsm}</p>
+            <div className="mt-8 space-y-4">
+  <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+    {product.name}
+  </h1>
 
-              {/* Color Picker */}
-              <div className="mt-8">
-  <h3 className="text-sm font-medium text-gray-900">Color</h3>
-  <fieldset aria-label="Choose a color" className="mt-4">
-    <RadioGroup
-      value={selectedColor}
-      onChange={setSelectedColor}
-      className="flex flex-wrap gap-4 sm:gap-6"
-    >
-      {product.colors.map((color) => (
-        <Radio
-          key={color.name}
-          value={color}
-          aria-label={color.name}
-          className={classNames(
-            color.selectedClass,
-            'flex flex-col items-center space-y-1 p-2 rounded-md focus:outline-none data-checked:ring-2 data-focus:data-checked:ring-3 data-focus:data-checked:ring-offset-1'
-          )}
-        >
-          <span
-            aria-hidden="true"
-            className={classNames(
-              color.class,
-              'size-8 min-w-8 rounded-full border border-black/10'
-            )}
-          />
-          <span className="text-xs text-gray-700">{color.name}</span>
-        </Radio>
-      ))}
-    </RadioGroup>
-  </fieldset>
+  <p className="text-2xl font-semibold text-red-600">
+    {product.price}
+  </p>
+  <h2 className="mt-3 text-lg font-semibold text-gray-900">Details</h2>
+  <p className="text-md text-gray-600">{product.details}</p>
+  <p className="text-base sm:text-lg text-gray-700 font-bold leading-relaxed">
+    {product.description}
+  </p>
+
+  <div className="mt-2 inline-flex items-center gap-2 text-md font-medium text-gray-600">
+    <span className="uppercase tracking-wide text-md text-gray-900">GSM Quality:</span>
+    <span className="text-gray-800 text-lg font-bold">{product.gsm}</span>
+  </div>
 </div>
 
 
+              {/* Color Picker */}
+              <div className="mt-8">
+                <h3 className="text-sm font-medium text-gray-900">Color</h3>
+                <fieldset aria-label="Choose a color" className="mt-4">
+                  <RadioGroup
+                    value={selectedColor}
+                    onChange={setSelectedColor}
+                    className="flex flex-wrap gap-3 sm:gap-5"
+                  >
+                    {product.colors.map((color) => (
+                      <Radio
+                        key={color.name}
+                        value={color}
+                        aria-label={color.name}
+                        className={classNames(
+                          color.selectedClass,
+                          'flex flex-col items-center space-y-1 p-2 rounded-md focus:outline-none transition ring-offset-2 ring-indigo-500 data-checked:ring-2 data-focus:data-checked:ring-2'
+                        )}
+                      >
+                        <span
+                          aria-hidden="true"
+                          className={classNames(
+                            color.class,
+                            'size-8 min-w-8 rounded-full border border-black/10'
+                          )}
+                        />
+                        <span className="text-xs text-gray-700 sm:text-sm">{color.name}</span>
+                      </Radio>
+                    ))}
+                  </RadioGroup>
+                </fieldset>
+              </div>
+
+
+              {/* Piece Picker */}
+              <div className="mt-10">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-medium text-gray-900">Pieces</h3>
+
+                </div>
+                <fieldset aria-label="Choose a size" className="mt-4">
+                  <RadioGroup
+                    value={selectedPiece}
+                    onChange={setSelectedPiece}
+                    className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4"
+                  >
+                    {product.piece.map((piece) => (
+                      <Radio
+                        key={piece.name}
+                        value={piece}
+                        disabled={!piece.inStock}
+                        className={classNames(
+                          piece.inStock
+                            ? 'cursor-pointer bg-white text-gray-900 shadow-xs'
+                            : 'cursor-not-allowed bg-gray-50 text-gray-200',
+                          'group relative flex items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-hidden data-focus:ring-2 data-focus:ring-indigo-500 sm:flex-1 sm:py-6',
+                        )}
+                      >
+                        <span>{piece.name}</span>
+                        {piece.inStock ? (
+                          <span aria-hidden="true" className="pointer-events-none absolute -inset-px rounded-md border-2 border-transparent group-data-checked:border-indigo-500 group-data-focus:border" />
+                        ) : (
+                          <span aria-hidden="true" className="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200">
+                            <svg stroke="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 size-full stroke-2 text-gray-200">
+                              <line x1={0} x2={100} y1={100} y2={0} vectorEffect="non-scaling-stroke" />
+                            </svg>
+                          </span>
+                        )}
+                      </Radio>
+                    ))}
+                  </RadioGroup>
+                </fieldset>
+              </div>
               {/* Size Picker */}
               <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Size</h3>
-       
-                                 </div>
+
+                </div>
                 <fieldset aria-label="Choose a size" className="mt-4">
                   <RadioGroup
                     value={selectedSize}
@@ -239,28 +297,29 @@ export default function ProductDetail() {
                   </RadioGroup>
                 </fieldset>
               </div>
-             
-       
 
-             
+
+
+
               <a
-                href={`https://wa.me/918056305724?text=${encodeURIComponent(
-                  `Hello, I'm interested in the product: ${product.name}\nColor: ${selectedColor.name}\nSize: ${selectedSize.name}`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-3 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15s-.767.967-.94 1.166c-.173.198-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.15-.173.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.611-.916-2.2-.242-.581-.487-.502-.67-.511-.173-.007-.372-.009-.571-.009a1.093 1.093 0 00-.796.372c-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.488 1.694.624.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347M12.051 20.946h-.003a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.25C2.169 5.514 6.604 1.078 12.056 1.078a9.84 9.84 0 016.981 2.894 9.85 9.85 0 012.893 6.994c-.003 5.45-4.438 9.884-9.889 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .184 5.312.181 11.868c0 2.093.547 4.136 1.588 5.945L.057 24l6.324-1.654a11.87 11.87 0 005.665 1.446h.005c6.554 0 11.865-5.312 11.868-11.868a11.82 11.82 0 00-3.496-8.465" />
-                </svg>
-                WhatsApp for Order
-              </a>
+  href={`https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0&text=${encodeURIComponent(
+    `Hello Sir, I'm interested in the product:\nProduct Name: ${product.name}\nColor: ${selectedColor.name}\nSize: ${selectedSize.name}\nPieces: ${selectedPiece.name}`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-3 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+>
+  <svg
+    className="w-5 h-5"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15s-.767.967-.94 1.166c-.173.198-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.15-.173.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.611-.916-2.2-.242-.581-.487-.502-.67-.511-.173-.007-.372-.009-.571-.009a1.093 1.093 0 00-.796.372c-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.488 1.694.624.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347M12.051 20.946h-.003a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.25C2.169 5.514 6.604 1.078 12.056 1.078a9.84 9.84 0 016.981 2.894 9.85 9.85 0 012.893 6.994c-.003 5.45-4.438 9.884-9.889 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .184 5.312.181 11.868c0 2.093.547 4.136 1.588 5.945L.057 24l6.324-1.654a11.87 11.87 0 005.665 1.446h.005c6.554 0 11.865-5.312 11.868-11.868a11.82 11.82 0 00-3.496-8.465" />
+  </svg>
+  WhatsApp for Order
+</a>
+
 
             </div>
 
@@ -268,7 +327,7 @@ export default function ProductDetail() {
             <img
               src={product.imageSrc}
               alt={product.imageAlt}
-              className="w-full max-w-sm h-auto rounded-md object-cover mx-auto"
+              className="w-full max-w-sm h-auto rounded-md bg-amber-50 object-cover mx-auto"
             />
 
 
@@ -277,15 +336,14 @@ export default function ProductDetail() {
             <div className="order-3 lg:col-span-2">
 
               <h2 className="mt-6 text-lg font-semibold text-gray-900">Highlights</h2>
-              <ul className="mt-2 list-disc pl-5 text-sm text-gray-800 space-x-1.5">
+              <ul className="mt-2 list-disc pl-5 text-md text-gray-800 space-x-1.5">
                 {product.highlights.map((item, i) => (
                   <li key={i} className='mt-1'>{item}</li>
                 ))}
               </ul>
-              <SizeGuideSection /> 
+              <SizeGuideSection />
 
-              <h2 className="mt-6 text-lg font-semibold text-gray-900">Details</h2>
-              <p className="mt-2 text-sm text-gray-600">{product.details}</p>
+             
             </div>
 
           </div>
@@ -302,18 +360,18 @@ export default function ProductDetail() {
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-4 lg:px-8">
           <div className="border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
             <div className="flex space-x-6 md:order-2">
-            {footerNavigation.social.map((item) => (
-  <a
-    key={item.name}
-    href={item.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-500 hover:text-gray-400"
-  >
-    <span className="sr-only">{item.name}</span>
-    <item.icon aria-hidden="true" className="h-6 w-6" />
-  </a>
-))}
+              {footerNavigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-gray-400"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon aria-hidden="true" className="h-6 w-6" />
+                </a>
+              ))}
 
             </div>
             <p className="mt-8 text-sm leading-5 text-gray-400 md:order-1 md:mt-0">
@@ -357,7 +415,7 @@ const footerNavigation = {
         </svg>
       ),
     },
-  
+
     {
       name: 'WhatsApp',
       href: 'https://api.whatsapp.com/message/J2COZUC5F7T3J1?autoload=1&app_absent=0',
