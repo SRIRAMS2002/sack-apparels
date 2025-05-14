@@ -119,19 +119,19 @@ export default function NavbarDemo() {
   </h2>
   <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 gap-x-6 gap-y-8 sm:max-w-xl sm:grid-cols-3 sm:gap-x-8 lg:max-w-none lg:grid-cols-5 lg:gap-x-10">
   <div className="col-span-1 flex justify-center">
-    <img src="/zoho.png" alt="Zoho" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+    <img src="/zoho.png" alt="Zoho" className="h-32 w-auto object-contain sm:h-40 lg:h-48" />
   </div>
   <div className="col-span-1 flex justify-center">
-    <img src="/psg.png" alt="PSG" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+    <img src="/psg.png" alt="PSG" className="h-32 w-auto object-contain sm:h-40 lg:h-48" />
   </div>
   <div className="col-span-1 flex justify-center">
-    <img src="/nks.png" alt="NKS" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+    <img src="/nks.png" alt="NKS" className="h-32 w-auto object-contain sm:h-40 lg:h-48" />
   </div>
   <div className="col-span-1 flex justify-center">
-    <img src="/MICE.png" alt="MICE" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+    <img src="/MICE.png" alt="MICE" className="h-32 w-auto object-contain sm:h-40 lg:h-48" />
   </div>
   <div className="col-span-1 flex justify-center">
-    <img src="/MCU.png" alt="MCU" className="h-20 w-auto object-contain sm:h-24 lg:h-32" />
+    <img src="/MCU.png" alt="MCU" className="h-32 w-auto object-contain sm:h-40 lg:h-48" />
   </div>
 </div>
 </div>

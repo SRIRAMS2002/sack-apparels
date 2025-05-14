@@ -20,7 +20,7 @@ export default function Header() {
         Get The Coolest T-Shirts Delivered To Your Doorstep!<br />
         Order Now On WhatsApp – Tap The Button & Grab Your Favorite Designs!
       </p>
-      <button className="mt-4 bg-white text-black font-semibold py-2 px-6 rounded-full min-w-sm">
+      <button className="mt-4 bg-white text-black font-semibold py-2 px-6 rounded-full ">
         View Collection
       </button>
     </div>
