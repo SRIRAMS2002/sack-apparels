@@ -46,6 +46,13 @@ type Product = {
   description: string;
   highlights: string[];
   details: string;
+sizeGuide: {
+  chart: Array<[string, number, number]>,
+  measureImg: string,
+  fitImg: string,
+  fitTips: string[]
+}
+
 };
 
 type Review = {
@@ -54,7 +61,18 @@ type Review = {
   totalCount: number;
 };
 
+type SizeChartEntry = [string | number, string | number, string | number]; // accepts number or string 
 
+interface SizeGuide {
+  chart: SizeChartEntry[];
+  measureImg: string;
+  fitImg: string;
+  fitTips: string[];
+}
+
+interface ProductWithSizeGuide {
+  sizeGuide?: SizeGuide;
+}
 
 const policies: Policy[] = [
   { name: 'International delivery', icon: GlobeAmericasIcon, description: 'Get your order in 2 years' },
@@ -330,7 +348,7 @@ export default function ProductDetail() {
 
               <a
   href={`https://wa.me/919600668214?text=${encodeURIComponent(
-    `Hello Sir, I'm interested in the product:\nProduct Name: ${product.name}\nColor: ${selectedColor.name}\nSize: ${selectedSize.name}\nPieces: ${selectedPiece.name}`
+    `Hello Sir, I'm interested in the product:\nProduct Name: ${product.name}\nGSM Qualty:${product.gsm}\nColor: ${selectedColor.name}\nSize: ${selectedSize.name}\nPieces: ${selectedPiece.name}`
   )}`}
   target="_blank"
   rel="noopener noreferrer"
@@ -368,8 +386,7 @@ export default function ProductDetail() {
                   <li key={i} className='mt-1'>{item}</li>
                 ))}
               </ul>
-              <SizeGuideSection />
-
+<SizeGuideSection product={product as ProductWithSizeGuide} />
              
             </div>
 
