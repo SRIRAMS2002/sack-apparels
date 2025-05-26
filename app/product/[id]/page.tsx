@@ -348,7 +348,7 @@ export default function ProductDetail() {
 
               <a
   href={`https://wa.me/919600668214?text=${encodeURIComponent(
-    `Hello Sir, I'm interested in the product:\nProduct Name: ${product.name}\nGSM Qualty:${product.gsm}\nColor: ${selectedColor.name}\nSize: ${selectedSize.name}\nPieces: ${selectedPiece.name}`
+    `Hello Sir, I'm interested in the \nProduct Name: ${product.name}\nGSM Qualty:${product.gsm}\nColor: ${selectedColor.name}\nSize: ${selectedSize.name}\nPieces: ${selectedPiece.name}`
   )}`}
   target="_blank"
   rel="noopener noreferrer"
