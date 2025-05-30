@@ -87,16 +87,7 @@ export const products = [
       { name: 'Maroon', class: 'bg-red-800', selectedClass: 'ring-red-800' },
       { name: 'Emerald Green', class: 'bg-emerald-600', selectedClass: 'ring-emerald-600' },
       { name: 'Royal Blue', class: 'bg-blue-700', selectedClass: 'ring-blue-700' },
-// Black	bg-gray-900	#111827
-// White	bg-white	#FFFFFF
-// Navy Blue	bg-blue-900	#1E3A8A
-// Lavender	bg-purple-300	#D8B4FE
-// Mustard Yellow	bg-amber-600	#D97706
-// Coffee Brown	bg-amber-900	#78350F
-// Beige	bg-yellow-100	#FEF9C3
-// Maroon	bg-red-800	#991B1B
-// Emerald Green	bg-emerald-600	#059669
-// Royal Blue	bg-blue-700	#1D4ED8
+
     ],
     sizes: [
       { name: 'S', inStock: true },
