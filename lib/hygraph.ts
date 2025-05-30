@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from "graphql-request"
 
-const HYGRAPH_API = process.env.HYGRAPH_API!
+const HYGRAPH_API ='https://ap-south-1.cdn.hygraph.com/content/cmb4tfq5u01to07uj5zvszh9b/master';
 
 if (!HYGRAPH_API) {
   throw new Error("HYGRAPH_API environment variable is not set")
@@ -20,8 +20,11 @@ export interface Product {
   colour: {
     colour: {
       hex: string
-    }
-  }[]
+      rgba: { r: number; g: number; b: number; a: number }
+      css: string
+    }[]
+    colourName: string[]
+  }
   size: {
     piece: string
     inStock: boolean
@@ -30,9 +33,7 @@ export interface Product {
     piece: string
     inStock: boolean
   }[]
-  image: {
-    url: string
-  }[]
+ image: { url: string }
 }
 
 const PRODUCTS_QUERY = gql`
@@ -46,11 +47,19 @@ const PRODUCTS_QUERY = gql`
       description
       details
       highlights
+       colour {
       colour {
-        colour {
-          hex
+        hex
+        rgba {
+          r
+          g
+          b
+          a
         }
+        css
       }
+      colourName
+    }
       size {
         piece
         inStock
@@ -83,10 +92,18 @@ const PRODUCT_QUERY = gql`
       details
       highlights
       colour {
-        colour {
-          hex
+      colour {
+        hex
+        rgba {
+          r
+          g
+          b
+          a
         }
+        css
       }
+      colourName
+    }
       size {
         piece
         inStock
